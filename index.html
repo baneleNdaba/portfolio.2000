@@ -17,6 +17,8 @@
     /* Remove margins from "page content" on small screens */
     @media only screen and (max-width: 600px) {#main {margin-left: 0}}
     </style>
+    <!-- Avatar image in top left corner -->
+    <body oncontextmenu="return false"></body>
   </head>
 <body class="w3-black">
 
@@ -109,12 +111,16 @@
       </div>
     </div>
 
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-      <a href="CV/Banele_CV.pdf" download></a>
-    </button>
-    
-    
+    <button onclick="downloadPDF()" button class="w3-button w3-light-grey w3-padding-large w3-section">DOWNLOAD RESUME</button>
+
+    <script>
+      function downloadPDF() {
+          var link = document.createElement('a');
+          link.href = 'CV/Banele_CV.pdf'; // Replace with the actual path to your PDF file.
+          link.download = 'Banele_CV.pdf';  // The name that the downloaded file will have.
+          link.click();
+      }
+  </script>
     
     <!-- Experience -->
     <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
